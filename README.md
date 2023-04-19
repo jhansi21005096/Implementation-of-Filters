@@ -30,8 +30,8 @@ Plot the images of the original one and the filtered one using plt.figure() and 
 
 ### 1. Smoothing Filters
 
-i) Using Averaging Filter
-
+## i) Using Averaging Filter
+```
 import cv2
 
 import numpy as np
@@ -63,10 +63,10 @@ plt.imshow(image2)
 plt.title('Box Filter')
 
 plt.axis('off')
+```
 
-
-ii) Using Weighted Averaging Filter
-
+## ii) Using Weighted Averaging Filter
+```
 kernel1 = np.array([[1,2,1],[2,4,2],[1,2,1]])/30
 
 image2 = cv2.filter2D(image1,-1,kernel1)
@@ -88,10 +88,10 @@ plt.imshow(image2)
 plt.title('Weighted Averaging Filter')
 
 plt.axis('off')
+```
 
-
-iii) Using Gaussian Filter
-
+## iii) Using Gaussian Filter
+```
 gaussian_blur = cv2.GaussianBlur(src = image1, ksize = (11,11), sigmaX=0, sigmaY=0)
 
 plt.figure(figsize = (15,15))
@@ -111,11 +111,11 @@ plt.imshow(gaussian_blur)
 plt.title("Gaussian Filter")
 
 plt.axis("off")
+```
 
 
-
-iv) Using Median Filter
-
+## iv) Using Median Filter
+```
 median = cv2.medianBlur(src = image1,ksize = 11)
 
 plt.figure(figsize = (15,15))
@@ -135,12 +135,12 @@ plt.imshow(gaussian_blur)
 plt.title("Median Filter")
 
 plt.axis("off")
-
+```
 
 
 ### 2. Sharpening Filters
-i) Using Laplacian Kernal
-
+## i) Using Laplacian Kernal
+```
 kernel3 = np.array([[0,1,0],[1,-4,1],[0,1,0]])
 
 laplacian_kernel = cv2.filter2D(image1,-1,kernel3)
@@ -162,12 +162,12 @@ plt.imshow(laplacian_kernel)
 plt.title("laplacian kernel")
 
 plt.axis("off")
+```
 
 
 
-
-ii) Using Laplacian Operator
-
+## ii) Using Laplacian Operator
+```
 laplacian_operator = cv2.Laplacian(image1,cv2.CV_64F)
 
 plt.figure(figsize = (15,15))
@@ -187,7 +187,7 @@ plt.imshow(laplacian_operator)
 plt.title("laplacian operator")
 
 plt.axis("off")
-
+```
 
 
 ## OUTPUT:
